@@ -1,0 +1,70 @@
+.title-game {
+    text-align: center;
+    background-color:#91FFD2;
+    width: 100%;
+    font-family: 'Lexend Exa', sans-serif;
+
+}
+
+#start-game {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+/*Where player can collect characters*/
+.character-containers {
+    margin-left: 10%;
+}
+
+ img {
+    width: 100px;
+    height: 100px;
+    margin-top: 1%;
+}
+
+/*container to select enemies and remaining enemies wait*/
+.enemy-selection {
+    border: solid black 2px;
+    height: 300px;
+    margin-top: 5%;
+}
+
+/*Header title in enemy selction*/
+.enemy-header {
+    text-align: center;
+}
+
+/*Button for attack*/
+.attack-button {
+    border: solid black 2px;
+    height: 300px;
+    margin-top: 10%;
+}
+/*container where enemy goes when attacking*/
+.defender {
+    border: solid black 2px;
+    height: 300px;
+    margin-top: 5%;
+}
+/*characters for attack*/
+#obiwan {
+margin-right: 15px;
+
+}
+
+#boba-fett {
+    margin-right: 15px;
+
+
+}
+
+#aayla-secura {
+    margin-right: 15px;
+
+
+}
+
+#darth-maul {
+
+}
