@@ -29,51 +29,57 @@
         </div>
     </div>
 </div>
+
 <!--Star stop buttons-->
     <div id="start-game">
         <button class="btn btn-info" onclick="startGame()">Start Game</button>
         <button class="btn btn-info" onclick="stopGame()">Stop Game</button>
       </div>
-
+<!--Select Figter-->   
+      <div>
+        <h3 id="attacker-title">Select Fighter</h3>
+    </div>
 <!--Img containers for characters-->
 <div class="character-containers">
     <div class="row">
 <div id="obiwan">
     <img src="https://i.guim.co.uk/img/media/8a36c17d2c101a4b6bf2c2ead340c3c703784be0/0_1425_2216_1330/master/2216.jpg?width=300&quality=85&auto=format&fit=max&s=1fc5c9ae03ede910acc98428df1fbabf" alt="Obiwan Kenobi">
+    <span>Obiwan</span>
+    <span>Health: 100</span>
 </div>
 
 <div id="boba-fett">
     <img src="https://boundingintocomics.com/files/2019/05/2019.05.23-07.09-boundingintocomics-5ce6efec3dc96.jpg" alt="Boba Fett">
+    <span>Boba Fett</span>
+    <span>Health: 150</span>
+    <span id="damage-taken"></span>
 </div>
 
 <div id="aayla-secura">
     <img src="http://images5.fanpop.com/image/photos/25000000/Aayla-Secura-awesome-aayla-secura-25086245-1280-800.jpg" alt="Aayla Secura">
+    <span>Aayla Secura</span>
+    <span>Health: 125</span>
 </div>
 
 <div id="darth-maul">
     <img src="https://i.pinimg.com/736x/62/95/9d/62959d388665c861c4ae128083377ae1.jpg" alt="Darth Maul">
+    <span>Darth Maul</span>
+    <span>Health: 180</span>
 </div>
 </div>
 
 <!--Area where non selected characters go-->
 <div class="enemy-selection">
-    <div class="row">
-
+    <div class="row justify-content-center">
+        <h3 class="battleground-title">Battle Grounds</h3>
 
     </div>
 </div>
 
 <!--when button is selected character attacks-->
 <div class="attack-button">
-    <button class="btn btn-info">Attack</button>
+    <button class="btn btn-info" id="attackPlayer">Attack</button>
 </div>
-
-<!--Defending area. Where enemy is selected-->
-<div class="defender">
-
-
-</div>
-
 
 <script src="scripts/game.js"></script>
 </body>

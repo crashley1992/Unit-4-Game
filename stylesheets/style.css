@@ -3,7 +3,6 @@
     background-color:#91FFD2;
     width: 100%;
     font-family: 'Lexend Exa', sans-serif;
-
 }
 
 #start-game {
@@ -11,10 +10,22 @@
     margin-top: 5%;
     margin-bottom: 1%;
 }
+/*Title above character images*/
+#attacker-title {
+    text-align: center;
+}
 
 /*Where player can collect characters*/
 .character-containers {
     margin-left: 10%;
+}
+
+.battleground-title {
+    text-align: center;
+}
+
+span {
+    display: block;
 }
 
  img {
