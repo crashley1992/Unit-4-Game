@@ -5,28 +5,6 @@ function stopGame() {
     document.location.reload()
   }
   
-  /*Objects Constructor for each character */
-// function Character(name, health, attack) {
-//   this.name = name;
-//   this.health = health;
-//   this.attack = attack;
-//   };
-
-
-// var obiwan = new Character("Obiwan", 100, -25);
-// var bobaFett = new Character("Boba Fett", 150, -20);
-// var aaylaSecura = new Character("Aayla Secura", 125, -30);
-// var darthMaul = new Character("Darth Maul", 180, -35);
-
-
-
-
-// //attacks
-// function obiwanAttack() {
-// var totalHealth = obiwan.attack + bobaFett.health;
-// console.log(totalHealth);
-// }
-
 //attack status
 var attack = false;
 
@@ -39,17 +17,17 @@ function startGame() {
 $(document).ready(function(){
 
   var obiwanHealth = 100;
-  //var obiwanAttack = -25;
   var bobaFettHealth = 150;
-  //var bobaFettAttack = -20;
   var aaylaSecuraHealth = 125;
-  //var aaylaSecuraAttack = -30;
   var darthMaulHealth = 180;
-  //var darthMaulAttack = -35;
   var health1 = 0;
   var health2 = 0;
   var health3 = 0;
   var health4 = 0;
+/*Might need to create a different variable for each attacker
+and attack a unique span t0
+*/
+
   
 /*Moves selected character to defender zone and then the others to enemy selections */
 
@@ -65,13 +43,16 @@ $(document).ready(function(){
         attack === true;
       //attacker calculation 
         var remainingHealth = obiwanHealth + (health1 -= 1);
-      //docks down health
+      //changes span in html to current health status.
+        $("#health1").text(remainingHealth);
+      //docks down health in console.log
         console.log(remainingHealth + " ally");
       //damage calculation of defender when attack button is selected
-       var damage = bobaFettHealth + (health2 -= 25);
-       console.log(damage + " enemy1");
+       var damage1 = bobaFettHealth + (health2 -= 25);
+       $("#damage1").text(damage1);
+       console.log(damage1 + " enemy1");
     //removes div when health is 0
-      if (damage === 0) {
+      if (damage1 === 0) {
         $("div").remove("#boba-fett"); 
           }
         });
@@ -88,10 +69,11 @@ $("#attackPlayer").click(function(){
 //docks down health
   console.log(remainingHealth + " ally");
 //damage calculation of defender when attack button is selected
- var damage = aaylaSecuraHealth + (health3 -= 25);
- console.log(damage + " enemy 2");
+ var damage2 = aaylaSecuraHealth + (health3 -= 25);
+ console.log(damage2 + " enemy 2");
+ $("#damage2").text(damage2);
 //removes div when health is 0
-if (damage === 0) {
+if (damage2 === 0) {
   $("div").remove("#aayla-secura"); 
     }
   });
@@ -107,12 +89,13 @@ $("#attackPlayer").click(function(){
 //docks down health
   console.log(remainingHealth + " ally");
 //damage calculation of defender when attack button is selected
- var damage = aaylaSecuraHealth + (health4 -= 25);
- console.log(damage + " enemy 3");
+ var damage3 = darthMaulHealth + (health4 -= 25);
+ console.log(damage3 + " enemy 3");
+ $("#damage3").text(damage3);
 //removes div when health is 0
-if (damage === 0) {
-  $('<h1>You Won</h1>').appendTo('.enemy-selection');
-  $("div").remove("#aayla-secura"); 
+//adds H1 Header when all enemies are defeated.
+if (damage3 <= 0) {
+  $("div").remove("#darth-maul"); 
     }
   });
        });
@@ -132,7 +115,6 @@ if (damage === 0) {
   //    $("#darth-maul").appendTo($(".attack-button"));
   //  });
 
-/*Moves enemy to defending area*/
   
 
      });
