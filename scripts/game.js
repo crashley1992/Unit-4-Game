@@ -2,9 +2,9 @@
 var start = false;
 //attack var set to false
 var attack = false;
-//counter power counter
+//This is the enemy damage counter. 
 var counterAttack = 0;
-//attack power counter
+//Counter for when character is selected by character
 var playerAttack = 0;
 
 
@@ -13,7 +13,7 @@ function stopGame() {
   document.location.reload()
 }
 
-//attack status
+//Attack status, when it is true the attack damage is applied. Trigged to true with attack button.
 var attack = false;
 
 function Character(name, health) {
@@ -21,11 +21,12 @@ function Character(name, health) {
   this.health = health;
 }
 
-//makes attack for attack button true
+//Makes attack for attack button true.
 function attackPlayer() {
   return attack = true;
 }
 
+//Character information is stored in Constructor
 var obiwan = new Character("Obiwan", 100);
 var bobaFett = new Character("Boba Fett", 150);
 var aaylaSecura = new Character("Aayla Secura", 125);
@@ -49,7 +50,9 @@ function startGame() {
       $("#attackPlayer").click(function() {
         console.log(attackPlayer());
         if (attack === true) {
+          //takes damage when reciving an attack by enemy. Can adjust counter attack if defensive stats need to change.
           var obiwanRemainingHealth = obiwan.health + (counterAttack -= 10);
+          //output for obi's health
           console.log("obi health: " + obiwanRemainingHealth);
           $("#obiwan-health").text(obiwanRemainingHealth);
         }
@@ -67,7 +70,7 @@ function startGame() {
       $("#attackPlayer").click(function() {
         console.log(attackPlayer());
         if (attack === true) {
-          //player attack is stroner but is differnt per character based on their health
+          //player attack is stronger but is differnt per character based on their health. Can also adjust if character defense stats need to change. 
           var obiwanRemainingHealth = obiwan.health + (playerAttack -= 15);
           console.log("obi health: " + obiwanRemainingHealth);
           $("#obiwan-health").text(obiwanRemainingHealth);
@@ -85,7 +88,7 @@ function startGame() {
       $("#attackPlayer").click(function() {
         console.log(attackPlayer());
         if (attack === true) {
-
+//damage that boba recieves from enemy when attack button triggers. 
           var bobaFettRemainingHealth = bobaFett.health + (counterAttack -= 10);
           console.log("Boba Fett health: " + bobaFettRemainingHealth);
           $("#boba-fett-health").text(bobaFettRemainingHealth);
@@ -102,7 +105,7 @@ function startGame() {
       $("#attackPlayer").click(function() {
         console.log(attackPlayer());
         if (attack === true) {
-
+//damage boba recieves when player is attacking enemy.
           var bobaFettRemainingHealth = bobaFett.health + (playerAttack -= 15);
           console.log("Boba Fett health: " + bobaFettRemainingHealth);
           $("#boba-fett-health").text(bobaFettRemainingHealth);
@@ -121,7 +124,7 @@ function startGame() {
       $("#attackPlayer").click(function() {
         console.log(attackPlayer());
         if (attack === true) {
-
+//damage aayla recieves when she is being attacked by enemy
           var aaylaSecuraRemainingHealth = aaylaSecura.health + (counterAttack -= 10);
           console.log("Aayla Secura health: " + aaylaSecuraRemainingHealth);
           $("#aayla-secura-health").text(aaylaSecuraRemainingHealth);
@@ -139,7 +142,7 @@ function startGame() {
       $("#attackPlayer").click(function() {
         console.log(attackPlayer());
         if (attack === true) {
-
+//damage aayla recieves after being attacked by player
           var aaylaSecuraRemainingHealth = aaylaSecura.health + (playerAttack -= 15);
           console.log("Aayla Secura health: " + aaylaSecuraRemainingHealth);
           $("#aayla-secura-health").text(aaylaSecuraRemainingHealth);
@@ -158,7 +161,7 @@ function startGame() {
       $("#attackPlayer").click(function() {
         console.log(attackPlayer());
         if (attack === true) {
-
+//damage darth maul recieves when enemy attacks
           var darthMaulRemainingHealth = darthMaul.health + (counterAttack -= 10);
           console.log("Darth Maul health: " + darthMaulRemainingHealth);
           $("#darth-maul-health").text(darthMaulRemainingHealth);
@@ -177,7 +180,7 @@ function startGame() {
       $("#attackPlayer").click(function() {
         console.log(attackPlayer());
         if (attack === true) {
-
+//damage darth maul recieves when player attacks
           var darthMaulRemainingHealth = darthMaul.health + (playerAttack -= 15);
           console.log("Darth Maul: " + darthMaulRemainingHealth);
           $("#darth-maul-health").text(darthMaulRemainingHealth);
@@ -189,18 +192,9 @@ function startGame() {
       });
     });
 
-    //Trigger for attack on attack button
+    //Trigger for attack on attack button. Activated when button is pressed. 
     $("#attackPlayer").click(function() {
       console.log(attackPlayer());
     });
-
-
-
-
-
-
-
-
-
   }
 }; //closing brace for startGame()

@@ -1,10 +1,10 @@
 body {
-  background-image: url(../img/background.jpg);  
+  background-image: url(../img/background.jpg);
 }
 
 .title-game {
   text-align: center;
-  background-color:black;
+  background-color: black;
   color: gold;
   width: 100%;
   font-family: 'Lexend Exa', sans-serif;
@@ -24,7 +24,7 @@ body {
 
 /*Where player can collect characters*/
 .character-containers {
-  margin-left: 10%;
+  margin-left: 15%;
   text-align: center;
 }
 
@@ -47,6 +47,7 @@ img {
   border: solid black 2px;
   height: 300px;
   margin-top: 1%;
+  margin-right: 9%;
   background-color: white;
 }
 
@@ -58,8 +59,10 @@ img {
 /*Button for attack*/
 .attack-button {
   border: solid black 2px;
+  width: 90%;
   height: 300px;
-  margin-top: 10%;
+  margin-top: 2%;
+  margin-right: 5%;
   text-align: center;
   background-color: white;
 }
