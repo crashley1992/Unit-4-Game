@@ -2,91 +2,109 @@
 <html>
 
 <head>
-    <title>Unit 4 Game</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../unit-4-game/stylesheets/style.css">
-<!--CDN for Jquery-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!--Bootstap CSS-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!--Stylesheet CSS link-->
-<link rel="stylesheet" href="../unit-4-game/stylesheets/style.css">
-<!--BootStrap Javascript-->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!--Google Fonts-->
-<link href="https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap" rel="stylesheet">
+  <title>Unit 4 Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--CDN for Jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!--Bootstap CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--Stylesheet CSS link-->
+  <link rel="stylesheet" href="../unit-4-game/stylesheets/style.css">
+  <!--BootStrap Javascript-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
-<!--Title Header Bar-->
-<div class="container-fluid">
-   <div class="row">
+  <!--Title Header Bar-->
+  <div class="container-fluid">
+    <div class="row">
       <div class="title-game">
         <h1>Star Wars Battle</h1>
-        </div>
-    </div>
-</div>
-
-<!--Star stop buttons-->
-    <div id="start-game">
-        <button class="btn btn-info" onclick="startGame()">Start Game</button>
-        <button class="btn btn-info" onclick="stopGame()">Stop Game</button>
       </div>
-<!--Select Figter-->   
-      <div>
-        <h3 id="attacker-title">Select Fighter</h3>
     </div>
-<!--Img containers for characters-->
-<div class="character-containers">
+  </div>
+
+  <!--Star stop buttons-->
+  <div id="start-game">
+    <button class="btn btn-info" onclick="startGame()">Start Game</button>
+    <button class="btn btn-info" onclick="stopGame()">Stop Game</button>
+  </div>
+  <!--Select Figter-->
+  <div>
+    <h3 id="attacker-title">Select Fighter</h3>
+  </div>
+  <!--Img containers for characters-->
+  <div class="character-containers">
     <div class="row">
-<div id="obiwan">
-    <img src="https://i.guim.co.uk/img/media/8a36c17d2c101a4b6bf2c2ead340c3c703784be0/0_1425_2216_1330/master/2216.jpg?width=300&quality=85&auto=format&fit=max&s=1fc5c9ae03ede910acc98428df1fbabf" alt="Obiwan Kenobi">
-    <span>Obiwan</span>
-    <span>Total HP: 100</span>
-    <p>Current HP:  <span id="health1"> </span></p>
-    
+      <div id="obiwan">
+        <img src="https://i.guim.co.uk/img/media/8a36c17d2c101a4b6bf2c2ead340c3c703784be0/0_1425_2216_1330/master/2216.jpg?width=300&quality=85&auto=format&fit=max&s=1fc5c9ae03ede910acc98428df1fbabf" alt="Obiwan Kenobi">
+        <button id="select-obiwan" class="btn btn-success">Defend As</button>
+        <button id="attack-obiwan" class="btn btn-danger">Attack</button>
 
-</div>
+        <span>Obiwan</span>
+        <span>Total HP: 100</span>
+        <p>Current HP:
+          <span id="obiwan-health"></span>
+        </p>
 
-<div id="boba-fett">
-    <img src="https://boundingintocomics.com/files/2019/05/2019.05.23-07.09-boundingintocomics-5ce6efec3dc96.jpg" alt="Boba Fett">
-    <span>Boba Fett</span>
-    <span>Total HP: 150</span>
-    <p id="damage-area">Current HP: <span id="damage1"> </span></p>
-</div>
 
-<div id="aayla-secura">
-    <img src="http://images5.fanpop.com/image/photos/25000000/Aayla-Secura-awesome-aayla-secura-25086245-1280-800.jpg" alt="Aayla Secura">
-    <span>Aayla Secura</span>
-    <span>Total HP: 125</span>
-    <p id="damage-area">Current HP: <span id="damage2"> </span></p>
-</div>
+      </div>
 
-<div id="darth-maul">
-    <img src="https://i.pinimg.com/736x/62/95/9d/62959d388665c861c4ae128083377ae1.jpg" alt="Darth Maul">
-    <span>Darth Maul</span>
-    <span>Total HP: 180</span>
-    <p id="damage-area">Current HP: <span id="damage3"> </span></p>
-</div>
+      <div id="boba-fett">
+        <img src="https://boundingintocomics.com/files/2019/05/2019.05.23-07.09-boundingintocomics-5ce6efec3dc96.jpg" alt="Boba Fett">
+        <button id="select-boba-fett" class="btn btn-success">Defend As</button>
+        <button id="attack-boba-fett" class="btn btn-danger">Attack</button>
+        <span>Boba Fett</span>
+        <span>Total HP: 150</span>
+        <p>Current HP:
+          <span id="boba-fett-health"> </span>
+        </p>
+      </div>
 
-</div>
+      <div id="aayla-secura">
+        <img src="http://images5.fanpop.com/image/photos/25000000/Aayla-Secura-awesome-aayla-secura-25086245-1280-800.jpg" alt="Aayla Secura">
+        <button id="select-aayla-secura" class="btn btn-success">Defend As</button>
+        <button id="attack-aayla-secura" class="btn btn-danger">Attack</button>
+        <span>Aayla Secura</span>
+        <span>Total HP: 125</span>
+        <p id="damage-area">Current HP:
+          <span id="aayla-secura-health"> </span>
+        </p>
+      </div>
 
-<!--Area where non selected characters go-->
-<div class="enemy-selection">
-    <div class="row justify-content-center">
+      <div id="darth-maul">
+        <img src="https://i.pinimg.com/736x/62/95/9d/62959d388665c861c4ae128083377ae1.jpg" alt="Darth Maul">
+        <button id="select-darth-maul" class="btn btn-success">Defend As</button>
+        <button id="attack-darth-maul" class="btn btn-danger">Attack</button>
+        <span>Darth Maul</span>
+        <span>Total HP: 180</span>
+        <p id="damage-area">Current HP:
+          <span id="darth-maul-health"> </span>
+          <h1 id="game-over"></h1>
+        </p>
+      </div>
+
+    </div>
+
+    <!--Area where non selected characters go-->
+    <div class="enemy-selection">
+      <div class="row justify-content-center">
         <h3 class="battleground-title">Battle Grounds</h3>
 
+      </div>
     </div>
-</div>
 
-<!--when button is selected character attacks-->
-<div class="attack-button">
-    <button class="btn btn-info" id="attackPlayer">Attack</button>
-</div>
+    <!--when button is selected character attacks-->
+    <div class="attack-button">
+      <button class="btn btn-danger" id="attackPlayer">Attack Enemy</button>
+    </div>
 
-<script src="scripts/game.js"></script>
+    <script src="scripts/game.js"></script>
 </body>
+
 </html>

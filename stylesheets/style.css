@@ -1,81 +1,90 @@
 .title-game {
-    text-align: center;
-    background-color:#91FFD2;
-    width: 100%;
-    font-family: 'Lexend Exa', sans-serif;
+  text-align: center;
+  background-color: #91FFD2;
+  width: 100%;
+  font-family: 'Lexend Exa', sans-serif;
 }
 
 #start-game {
-    text-align: center;
-    margin-top: 5%;
-    margin-bottom: 1%;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 1%;
 }
+
 /*Title above character images*/
 #attacker-title {
-    text-align: center;
+  text-align: center;
 }
 
 /*Where player can collect characters*/
 .character-containers {
-    margin-left: 10%;
+  margin-left: 10%;
 }
 
 .battleground-title {
-    text-align: center;
+  text-align: center;
 }
 
 span {
-    display: block;
+  display: block;
 }
 
- img {
-    width: 100px;
-    height: 100px;
-    margin-top: 1%;
+img {
+  width: 100px;
+  height: 100px;
+  margin-top: 1%;
 }
 
 /*container to select enemies and remaining enemies wait*/
 .enemy-selection {
-    border: solid black 2px;
-    height: 300px;
-    margin-top: 5%;
+  border: solid black 2px;
+  height: 300px;
+  margin-top: 5%;
 }
 
 /*Header title in enemy selction*/
 .enemy-header {
-    text-align: center;
+  text-align: center;
 }
 
 /*Button for attack*/
 .attack-button {
-    border: solid black 2px;
-    height: 300px;
-    margin-top: 10%;
+  border: solid black 2px;
+  height: 300px;
+  margin-top: 10%;
 }
+
 /*container where enemy goes when attacking*/
 .defender {
-    border: solid black 2px;
-    height: 300px;
-    margin-top: 5%;
+  border: solid black 2px;
+  height: 300px;
+  margin-top: 5%;
 }
+
 /*characters for attack*/
 #obiwan {
-margin-right: 15px;
-
+  margin-right: 15px;
+  border: solid black 2px;
+  background-color: #2DA5FF;
+  color: white;
 }
 
 #boba-fett {
-    margin-right: 15px;
-
-
+  margin-right: 15px;
+  border: solid black 2px;
+  background-color: #BEE884;
+  color: white;
 }
 
 #aayla-secura {
-    margin-right: 15px;
-
-
+  margin-right: 15px;
+  border: solid black 2px;
+  background-color: #45FFBB;
+  color: white;
 }
 
 #darth-maul {
-
+  border: solid black 2px;
+  background-color: #FF5381;
+  color: white;
 }

@@ -1,123 +1,206 @@
 //start is a false until start game is selected
 var start = false;
+//attack var set to false
+var attack = false;
+//counter power counter
+var counterAttack = 0;
+//attack power counter
+var playerAttack = 0;
+
+
 //stop game
 function stopGame() {
-    document.location.reload()
-  }
-  
+  document.location.reload()
+}
+
 //attack status
 var attack = false;
 
-  //start game
+function Character(name, health) {
+  this.name = name;
+  this.health = health;
+}
+
+//makes attack for attack button true
+function attackPlayer() {
+  return attack = true;
+}
+
+var obiwan = new Character("Obiwan", 100);
+var bobaFett = new Character("Boba Fett", 150);
+var aaylaSecura = new Character("Aayla Secura", 125);
+var darthMaul = new Character("Dath Maul", 180);
+
+//start game function
 function startGame() {
-    start = true;
+  start = true;
 
-    if(start === true) {
-//move non selected characters from top row to middle
-$(document).ready(function(){
+  if (start === true) {
 
-  var obiwanHealth = 100;
-  var bobaFettHealth = 150;
-  var aaylaSecuraHealth = 125;
-  var darthMaulHealth = 180;
-  var health1 = 0;
-  var health2 = 0;
-  var health3 = 0;
-  var health4 = 0;
-/*Might need to create a different variable for each attacker
-and attack a unique span t0
-*/
 
-  
-/*Moves selected character to defender zone and then the others to enemy selections */
+    //Selector Buttons below allow you to pick what character your attacking or defending.
 
-/*If Obiwan is selected as the attacker they move to attack zone*/
-      $("#obiwan").click(function() {
+    //Obiwan selctor buttons
+    /***************************************/
+    //Play as Obi button
+    $("#select-obiwan").click(function() {
       $("#obiwan").appendTo($(".attack-button"));
-  /*All other characters will move to defending Zone onclick */
-  //Onclick boba fett moves to Battlegrounds
-      $("#boba-fett").click(function() {
+      //triggers the attack button and the health counters.
+      $("#attackPlayer").click(function() {
+        console.log(attackPlayer());
+        if (attack === true) {
+          var obiwanRemainingHealth = obiwan.health + (counterAttack -= 10);
+          console.log("obi health: " + obiwanRemainingHealth);
+          $("#obiwan-health").text(obiwanRemainingHealth);
+        }
+        //if selected player dies game over
+        if (obiwanRemainingHealth <= 0) {
+          $("#game-over").text("Game Over");
+          console.log("Gamer Over")
+        }
+
+      });
+    });
+    //Fight agaisnt Obiwan
+    $("#attack-obiwan").click(function() {
+      $("#obiwan").appendTo($(".enemy-selection"));
+      $("#attackPlayer").click(function() {
+        console.log(attackPlayer());
+        if (attack === true) {
+          //player attack is stroner but is differnt per character based on their health
+          var obiwanRemainingHealth = obiwan.health + (playerAttack -= 15);
+          console.log("obi health: " + obiwanRemainingHealth);
+          $("#obiwan-health").text(obiwanRemainingHealth);
+        }
+        if (obiwanRemainingHealth <= 0) {
+          $("div").remove("#obiwan");
+        }
+      });
+    });
+    //boba fett selector buttons//
+    /***************************************/
+    //Play as Boba Fett
+    $("#select-boba-fett").click(function() {
+      $("#boba-fett").appendTo($(".attack-button"));
+      $("#attackPlayer").click(function() {
+        console.log(attackPlayer());
+        if (attack === true) {
+
+          var bobaFettRemainingHealth = bobaFett.health + (counterAttack -= 10);
+          console.log("Boba Fett health: " + bobaFettRemainingHealth);
+          $("#boba-fett-health").text(bobaFettRemainingHealth);
+
+        }
+        if (bobaFettRemainingHealth <= 0) {
+          $("#game-over").text("Game Over");
+        }
+      });
+    });
+    //Attack Boba Fett
+    $("#attack-boba-fett").click(function() {
       $("#boba-fett").appendTo($(".enemy-selection"));
-    //Attack player is triggered by attack button 
-      $("#attackPlayer").click(function(){
-        attack === true;
-      //attacker calculation 
-        var remainingHealth = obiwanHealth + (health1 -= 1);
-      //changes span in html to current health status.
-        $("#health1").text(remainingHealth);
-      //docks down health in console.log
-        console.log(remainingHealth + " ally");
-      //damage calculation of defender when attack button is selected
-       var damage1 = bobaFettHealth + (health2 -= 25);
-       $("#damage1").text(damage1);
-       console.log(damage1 + " enemy1");
-    //removes div when health is 0
-      if (damage1 === 0) {
-        $("div").remove("#boba-fett"); 
-          }
-        });
-       });
+      $("#attackPlayer").click(function() {
+        console.log(attackPlayer());
+        if (attack === true) {
 
-    /*Aayla Secura*/
-       $("#aayla-secura").click(function() {
-       $("#aayla-secura").appendTo($(".enemy-selection"));
-//Attack player is triggered by attack button 
-$("#attackPlayer").click(function(){
-  attack === true;
-//attacker calculation 
-  var remainingHealth = obiwanHealth + (health1 -= 1);
-//docks down health
-  console.log(remainingHealth + " ally");
-//damage calculation of defender when attack button is selected
- var damage2 = aaylaSecuraHealth + (health3 -= 25);
- console.log(damage2 + " enemy 2");
- $("#damage2").text(damage2);
-//removes div when health is 0
-if (damage2 === 0) {
-  $("div").remove("#aayla-secura"); 
-    }
-  });
-        });
-    /*Darth Maul*/
-  $("#darth-maul").click(function() {
-    $("#darth-maul").appendTo($(".enemy-selection"));
-    //Attack player is triggered by attack button 
-$("#attackPlayer").click(function(){
-  attack === true;
-//attacker calculation 
-  var remainingHealth = obiwanHealth + (health1 -= 1);
-//docks down health
-  console.log(remainingHealth + " ally");
-//damage calculation of defender when attack button is selected
- var damage3 = darthMaulHealth + (health4 -= 25);
- console.log(damage3 + " enemy 3");
- $("#damage3").text(damage3);
-//removes div when health is 0
-//adds H1 Header when all enemies are defeated.
-if (damage3 <= 0) {
-  $("div").remove("#darth-maul"); 
-    }
-  });
-       });
-    });//closing for obiwan as selected character
+          var bobaFettRemainingHealth = bobaFett.health + (playerAttack -= 15);
+          console.log("Boba Fett health: " + bobaFettRemainingHealth);
+          $("#boba-fett-health").text(bobaFettRemainingHealth);
+        }
+        if (bobaFettRemainingHealth <= 0) {
+          $("div").remove("#boba-fett");
+        }
+      });
+    });
+
+    //aayla secura selector buttons
+    /***************************************/
+    //Play as aayla secura
+    $("#select-aayla-secura").click(function() {
+      $("#aayla-secura").appendTo($(".attack-button"));
+      $("#attackPlayer").click(function() {
+        console.log(attackPlayer());
+        if (attack === true) {
+
+          var aaylaSecuraRemainingHealth = aaylaSecura.health + (counterAttack -= 10);
+          console.log("Aayla Secura health: " + aaylaSecuraRemainingHealth);
+          $("#aayla-secura-health").text(aaylaSecuraRemainingHealth);
+
+        }
+        if (aaylaSecuraRemainingHealth <= 0) {
+          $("#game-over").text("Game Over");
+        }
+      });
+    });
+
+    //Fight agaisnt aayla secura
+    $("#attack-aayla-secura").click(function() {
+      $("#aayla-secura").appendTo($(".enemy-selection"));
+      $("#attackPlayer").click(function() {
+        console.log(attackPlayer());
+        if (attack === true) {
+
+          var aaylaSecuraRemainingHealth = aaylaSecura.health + (playerAttack -= 15);
+          console.log("Aayla Secura health: " + aaylaSecuraRemainingHealth);
+          $("#aayla-secura-health").text(aaylaSecuraRemainingHealth);
+        }
+        if (aaylaSecuraRemainingHealth <= 0) {
+          $("div").remove("#aayla-secura");
+        }
+      });
+    });
+
+    //darth maul selector buttons
+    /***************************************/
+    //Play as Darth Maul
+    $("#select-darth-maul").click(function() {
+      $("#darth-maul").appendTo($(".attack-button"));
+      $("#attackPlayer").click(function() {
+        console.log(attackPlayer());
+        if (attack === true) {
+
+          var darthMaulRemainingHealth = darthMaul.health + (counterAttack -= 10);
+          console.log("Darth Maul health: " + darthMaulRemainingHealth);
+          $("#darth-maul-health").text(darthMaulRemainingHealth);
+
+        }
+        if (darthMaulRemainingHealth <= 0) {
+          $("#game-over").text("Game Over");
+        }
+      });
+
+
+    });
+    //Fight Agaisnt Darth Maul
+    $("#attack-darth-maul").click(function() {
+      $("#darth-maul").appendTo($(".enemy-selection"));
+      $("#attackPlayer").click(function() {
+        console.log(attackPlayer());
+        if (attack === true) {
+
+          var darthMaulRemainingHealth = darthMaul.health + (playerAttack -= 15);
+          console.log("Darth Maul: " + darthMaulRemainingHealth);
+          $("#darth-maul-health").text(darthMaulRemainingHealth);
+
+        }
+        if (darthMaulRemainingHealth <= 0) {
+          $("div").remove("#darth-maul");
+        }
+      });
+    });
+
+    //Trigger for attack on attack button
+    $("#attackPlayer").click(function() {
+      console.log(attackPlayer());
+    });
 
 
 
-//  $("#boba-fett").click(function() {
-  //    $("#boba-fett").appendTo($(".attack-button"));
-  //  });
 
-  //  $("#aayla-secura").click(function() {
-  //    $("#aayla-secura").appendTo($(".attack-button"));
-  //  });
 
-  //  $("#darth-maul").click(function() {
-  //    $("#darth-maul").appendTo($(".attack-button"));
-  //  });
 
-  
 
-     });
-    }
+
+
+  }
 }; //closing brace for startGame()
-
