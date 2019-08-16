@@ -1,24 +1,31 @@
+body {
+  background-image: url(../img/background.jpg);  
+}
+
 .title-game {
   text-align: center;
-  background-color: #91FFD2;
+  background-color:black;
+  color: gold;
   width: 100%;
   font-family: 'Lexend Exa', sans-serif;
 }
 
 #start-game {
   text-align: center;
-  margin-top: 5%;
+  margin-top: 1%;
   margin-bottom: 1%;
 }
 
 /*Title above character images*/
 #attacker-title {
   text-align: center;
+  color: white;
 }
 
 /*Where player can collect characters*/
 .character-containers {
   margin-left: 10%;
+  text-align: center;
 }
 
 .battleground-title {
@@ -32,14 +39,15 @@ span {
 img {
   width: 100px;
   height: 100px;
-  margin-top: 1%;
+  border: solid white 5px;
 }
 
 /*container to select enemies and remaining enemies wait*/
 .enemy-selection {
   border: solid black 2px;
   height: 300px;
-  margin-top: 5%;
+  margin-top: 1%;
+  background-color: white;
 }
 
 /*Header title in enemy selction*/
@@ -52,6 +60,8 @@ img {
   border: solid black 2px;
   height: 300px;
   margin-top: 10%;
+  text-align: center;
+  background-color: white;
 }
 
 /*container where enemy goes when attacking*/
@@ -67,24 +77,41 @@ img {
   border: solid black 2px;
   background-color: #2DA5FF;
   color: white;
+  font-weight: bold;
 }
 
 #boba-fett {
   margin-right: 15px;
   border: solid black 2px;
   background-color: #BEE884;
-  color: white;
+  color: black;
+  font-weight: bold;
 }
 
 #aayla-secura {
   margin-right: 15px;
   border: solid black 2px;
   background-color: #45FFBB;
-  color: white;
+  color: black;
+  font-weight: bold;
 }
 
 #darth-maul {
   border: solid black 2px;
   background-color: #FF5381;
   color: white;
+  font-weight: bold;
+}
+
+/*Defending Player title*/
+.attack-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+/*Game Over styling*/
+#game-over {
+  color: red;
+  background-color: black;
+  text-align: center;
 }
