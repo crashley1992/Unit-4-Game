@@ -17,10 +17,7 @@ function stopGame() {
 //Attack status, when it is true the attack damage is applied. Trigged to true with attack button.
 var attack = false;
 
-function Character(name, health) {
-  this.name = name;
-  this.health = health;
-}
+
 
 //Makes attack for attack button true.
 function attackPlayer() {
@@ -28,6 +25,12 @@ function attackPlayer() {
 }
 
 //Character information is stored in Constructor
+
+function Character(name, health) {
+  this.name = name;
+  this.health = health;
+}
+
 var obiwan = new Character("Obiwan", 100);
 var bobaFett = new Character("Boba Fett", 150);
 var aaylaSecura = new Character("Aayla Secura", 125);
