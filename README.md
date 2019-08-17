@@ -12,7 +12,7 @@ This is a Star Wars fighting Game. Each character has their own stats and you mu
 8. Upon losing the game Darth Vader will say "You have failed me for the last time" and Red Text will say "Game Over".
 
 **Audio Design**
-**Sound Design by Branden Clarke (aka best brother ever).**
+**Branden Clarke (aka best brother ever).**
 Darth Vader will say "Most Impressive" when you win. Saved as an mp3 file.
 Darth Vader will say "You have failed me for the last time". Saved as an mp3 file.
 
