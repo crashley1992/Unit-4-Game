@@ -6,7 +6,8 @@ var attack = false;
 var counterAttack = 0;
 //Counter for when character is selected by character
 var playerAttack = 0;
-
+//win counter
+var win = 0;
 
 //stop game
 function stopGame() {
@@ -31,6 +32,18 @@ var obiwan = new Character("Obiwan", 100);
 var bobaFett = new Character("Boba Fett", 150);
 var aaylaSecura = new Character("Aayla Secura", 125);
 var darthMaul = new Character("Dath Maul", 180);
+
+function winCounter() {
+  if (win === 5) {
+    $("#game-won").text("You Win!");
+    winAudio.play();
+    }
+  }
+
+var lostAudio = new Audio('sounds/loss.mp3');
+
+//win audio
+var winAudio = new Audio('sounds/win.mp3');
 
 //start game function
 function startGame() {
@@ -59,7 +72,7 @@ function startGame() {
         //if selected player dies game over
         if (obiwanRemainingHealth <= 0) {
           $("#game-over").text("Game Over");
-          console.log("Gamer Over")
+          lostAudio.play();
         }
 
       });
@@ -76,7 +89,10 @@ function startGame() {
           $("#obiwan-health").text(obiwanRemainingHealth);
         }
         if (obiwanRemainingHealth <= 0) {
+          win++;
           $("div").remove("#obiwan");
+          //add win counter 
+          winCounter();
         }
       });
     });
@@ -96,6 +112,7 @@ function startGame() {
         }
         if (bobaFettRemainingHealth <= 0) {
           $("#game-over").text("Game Over");
+          lostAudio.play();
         }
       });
     });
@@ -111,7 +128,10 @@ function startGame() {
           $("#boba-fett-health").text(bobaFettRemainingHealth);
         }
         if (bobaFettRemainingHealth <= 0) {
+          win++;
           $("div").remove("#boba-fett");
+          //add win counter 
+          winCounter();
         }
       });
     });
@@ -132,6 +152,7 @@ function startGame() {
         }
         if (aaylaSecuraRemainingHealth <= 0) {
           $("#game-over").text("Game Over");
+          lostAudio.play();
         }
       });
     });
@@ -148,7 +169,10 @@ function startGame() {
           $("#aayla-secura-health").text(aaylaSecuraRemainingHealth);
         }
         if (aaylaSecuraRemainingHealth <= 0) {
+          win++;
           $("div").remove("#aayla-secura");
+                    //add win counter 
+                    winCounter();
         }
       });
     });
@@ -169,6 +193,7 @@ function startGame() {
         }
         if (darthMaulRemainingHealth <= 0) {
           $("#game-over").text("Game Over");
+          lostAudio.play();
         }
       });
 
@@ -187,7 +212,10 @@ function startGame() {
 
         }
         if (darthMaulRemainingHealth <= 0) {
+          win++;
           $("div").remove("#darth-maul");
+                    //add win counter 
+          winCounter();
         }
       });
     });

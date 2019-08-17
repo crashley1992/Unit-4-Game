@@ -118,3 +118,9 @@ img {
   background-color: black;
   text-align: center;
 }
+
+#game-won {
+  color: green ;
+  background-color: gold;
+  text-align: center;
+}
