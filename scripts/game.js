@@ -64,7 +64,7 @@ function startGame() {
         console.log(attackPlayer());
         if (attack === true) {
           //takes damage when reciving an attack by enemy. Can adjust counter attack if defensive stats need to change.
-          var obiwanRemainingHealth = obiwan.health + (counterAttack -= 10);
+          var obiwanRemainingHealth = obiwan.health + (counterAttack -= 5);
           //output for obi's health
           console.log("obi health: " + obiwanRemainingHealth);
           $("#obiwan-health").text(obiwanRemainingHealth);
