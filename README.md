@@ -11,10 +11,12 @@ This is a Star Wars fighting Game. Each character has their own stats and you mu
 7. Upon winning the game Darth Vader will say "Most impressive." and Green Text will say "You Win".
 8. Upon losing the game Darth Vader will say "You have failed me for the last time" and Red Text will say "Game Over".
 
-**Audio Design**
-**Branden Clarke (aka best brother ever).**
-Darth Vader will say "Most Impressive" when you win. Saved as an mp3 file.
-Darth Vader will say "You have failed me for the last time". Saved as an mp3 file.
+**Audio Design and Creation**
+**Samples built by Branden Clarke (aka best brother ever).**
+Darth Vader "Most Impressive" when you win. Saved as an mp3 file.
+Darth Vader "You have failed me for the last time". Saved as an mp3 file.
 
+**Warning about Wins Counter**
+If you overclick the "Attack Enemy" button after beating the character, the win counter will continue tracking wins so it may end the game early. To prevent this, after the character disappears, do not press the "Attack Enemy" button until a new enemy has been selected. 
 
 Link to published git pages: https://crashley1992.github.io/Unit-4-Game/
